@@ -31,6 +31,10 @@ Edit this document to include your answers after each question. Make sure to lea
 3. Explain what a closure is.
 
 4. Describe the four principles of the 'this' keyword.
+ 1) Window binding - if we do not give "this" a context it will return to us the window which is the global object in node or undefined in strict mode.
+    2) Implicit binding - applies to objects with methods. When the method is invoked, 
+    3) Explicit binding -
+    4) New binding -
 
 5. Why do we need super() in an extended class?
 
