@@ -25,18 +25,27 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
-
+.map - is great for when you are CONVERTING data. An example of that might be changing a string to lowercase or uppercase. It also returns a new array and needs a return statement.
+.reduce - is great for things such as multiply, subtracting and adding but can be used for anything. It returns a single value but not a new array.
+.filter - great for when you want to return a boolean of true or false.Returns a new array, requires a return statment and is used for filtering data which will be included in the array only if it's true.
 2. Explain the difference between a callback and a higher order function.
+A callback is a function that is passed INTO another function as an argument while a higher order function is a function that receives other functions.
 
 3. Explain what a closure is.
+Its when a inner function reaches out of its scope to grab a variable defined in an outer function.
+It is also what prevents things such as variables within a function be unnatainable outside of the function.
 
 4. Describe the four principles of the 'this' keyword.
  1) Window binding - if we do not give "this" a context it will return to us the window which is the global object in node or undefined in strict mode.
-    2) Implicit binding - applies to objects with methods. When the method is invoked, 
-    3) Explicit binding -
-    4) New binding -
+    2) Implicit binding - applies to objects with methods. When the method is invoked, we're telling it to look to the left of the dot and that is what "this" refers to.
+    3) Explicit binding - this is when we tell our function to use .call, .apply and .bind. 
+    .call - immediately invokes the function and is passed in arguments 1 by 1
+    .apply - immediately invokes the function and is passed arguments as an ARRAY.
+    .bind - this takes in arguments 1 by 1 like in .call BUT, unlike the others, you DO NOT immediately invoke the function & it returns a new function that can be invoked later.
+    4) New binding - is when we invoke a function with the "new" keyword and makes the function bound to it. When invoked with a constructor function. it is now pointing towards the "new" object that we created.
 
 5. Why do we need super() in an extended class?
+We need them in classes to do what object.create and parent.call do.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
