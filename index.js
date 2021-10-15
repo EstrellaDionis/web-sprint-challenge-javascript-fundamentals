@@ -28,8 +28,8 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(number) {
+  return (number) * (1 + number) / 2
 
   }
  
@@ -56,8 +56,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(){
+    const animals = []
+
+    zooAnimals.forEach((animal) =>{
+      animals.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`)
+    });
+    return animals;
   }
   
 
@@ -67,19 +72,26 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(lowerCaseAnimals){
+    return lowerCaseAnimals.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
   }
   
-  
+  console.log(lowerCaseNames);
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(){
+    const lowPopulationAnimals = zooAnimals.filter(function (animal){
+      return animal.population < 5;
+    });
+    return lowPopulationAnimals
   }
+
+  console.log(lowPopulationAnimals)
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -88,9 +100,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(){
+    const USApop = zooAnimals.reduce(function (accumulator, item){
+      return accumulator + item.population;
+    }, 0);
+    return USApop;
   }
+  console.log(USApop);
   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
